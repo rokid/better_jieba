@@ -8,21 +8,21 @@ def isAllZh(s):# 判断是否全是中文
     return True
 
 
-def fenci(one_string,HMM=False):
+def fenci(one_string, discover_new_word=True):
     for _ in range(len(one_string)): # 去掉所有空格
         try:
             one_string=one_string.replace(" ","")
         except:
             break
     final_result = []
-    temp_list = jieba.lcut(one_string, HMM=HMM)
-    if HMM==False:# HMM=False已实际使之缩小了不少粒度
+    temp_list = jieba.lcut(one_string, HMM=discover_new_word)
+    if discover_new_word==False:# HMM=False已实际使之缩小了不少粒度
         for word in temp_list:
             if isAllZh(word) == False:
                 continue
             if len(word) > 3:
                 jieba.del_word(word)
-                final_result.extend(jieba.lcut(word, HMM=HMM))
+                final_result.extend(jieba.lcut(word, HMM=discover_new_word))
             else:
                 final_result.append(word)
     else:
