@@ -1,12 +1,14 @@
 # coding=UTF-8
 import jieba
 
-def isAllZh(s):# 判断是否全是中文
+# 判断是否全是中文
+def isAllZh(s):
     for c in s:
         if not ('\u4e00' <= c <= '\u9fa5'):
             return False
     return True
 
+# HMM=True
 def fenci_1(one_string):
     for _ in range(len(one_string)): # 去掉所有空格
         try:
