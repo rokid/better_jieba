@@ -34,7 +34,7 @@ def fenci_1(one_string):
 
 # HMM=False已实际使之缩小了不少粒度
 def fenci_2(one_string):
-    for _ in range(len(one_string)):
+    for _ in range(len(one_string)): # 去掉所有空格
         try:
             one_string = one_string.replace(" ", "")
         except:
