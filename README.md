@@ -15,13 +15,13 @@ $ git clone git@github.com:Rokid/better_jieba.git
 
 ### 使用
 
-如下，与 `HMM=False` 的结果类似。
-
 ```py
-print(jieba.lcut('丰田太省了', HMM=False))
-print(jieba.lcut('我们中出了一个叛徒', HMM=False))
-print(jieba.lcut('丰田太省了', HMM=True))
-print(jieba.lcut('我们中出了一个叛徒', HMM=True))
+from better_jieba import fenci_1,fenci_2
+print(fenci_1('我爱北京天安门'))
+print(fenci_2('我爱北京天安门'))
+print(jieba.lcut('我爱北京天安门', HMM=False))
+print(jieba.lcut('我爱北京天安门', HMM=True))
+
 ```
 
 ### License
