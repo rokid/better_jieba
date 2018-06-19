@@ -10,6 +10,7 @@
 
 ```bash
 $ pip install jieba
+$ git clone git@github.com:Rokid/better_jieba.git
 ```
 
 ### 使用
