@@ -8,7 +8,7 @@ def isAllZh(s):# 判断是否全是中文
     return True
 
 
-def fenci(one_string, discover_new_word=True):
+def fenci(one_string, discover_new_word=False):
     for _ in range(len(one_string)): # 去掉所有空格
         try:
             one_string=one_string.replace(" ","")
