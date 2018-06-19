@@ -1,13 +1,28 @@
-Python3
-```
-pip install jieba
-```
-原理 是 对 一些 词 比如 长词 等 进行 二 次 分词
+# better_jieba
 
-事实上和HMM=False的结果貌似差不多
+更好的结巴分词，对长词进行了二次分词。
+
+### requirements
+
+- Python3
+
+### 安装
+
+```bash
+$ pip install jieba
 ```
+
+### 使用
+
+如下，与 `HMM=False` 的结果类似。
+
+```py
 print(jieba.lcut('丰田太省了', HMM=False))
 print(jieba.lcut('我们中出了一个叛徒', HMM=False))
 print(jieba.lcut('丰田太省了', HMM=True))
 print(jieba.lcut('我们中出了一个叛徒', HMM=True))
 ```
+
+### License
+
+MIT.
