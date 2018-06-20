@@ -1,11 +1,16 @@
 # coding=UTF-8
 import jieba
 
+from sys import version_info
+
 def isAllZh(s):# 判断是否全是中文
-    for c in s:
-        if not ('\u4e00' <= c <= '\u9fa5'):
-            return False
-    return True
+    if version_info.major == 2:
+        return True
+    else:
+        for c in s:
+            if not ('\u4e00' <= c <= '\u9fa5'):
+                return False
+        return True
 
 
 def fenci(one_string, discover_new_word=False):
