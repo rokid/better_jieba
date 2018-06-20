@@ -4,7 +4,8 @@
 
 ### requirements
 
-- Python3
+- Python3 / Python2
+- jieba
 
 ### 安装
 
