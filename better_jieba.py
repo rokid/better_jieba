@@ -1,9 +1,10 @@
 # coding=UTF-8
 import jieba
-
+import re
+# 检查你的Python版本
 from sys import version_info
 
-def isAllZh(s):# 判断是否全是中文
+def isAllZh(s):# python3判断是否全是中文
     if version_info.major == 2:
         return True
     else:
@@ -14,11 +15,7 @@ def isAllZh(s):# 判断是否全是中文
 
 
 def fenci(one_string, discover_new_word=False):
-    for _ in range(len(one_string)): # 去掉所有空格
-        try:
-            one_string=one_string.replace(" ","")
-        except:
-            break
+    one_string = re.sub(r'\s+', '', one_string)# 去掉所有空格
     final_result = []
     temp_list = jieba.lcut(one_string, HMM=discover_new_word)
     if discover_new_word==False:# HMM=False已实际使之缩小了不少粒度
