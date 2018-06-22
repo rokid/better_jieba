@@ -1,7 +1,6 @@
 # coding=UTF-8
 import jieba
 import re
-# 检查你的Python版本
 from sys import version_info
 
 def isAllZh(s):# python3判断是否全是中文
