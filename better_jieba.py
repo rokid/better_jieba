@@ -17,7 +17,7 @@ def fenci(one_string, discover_new_word=False):
             if isAllZh(word) == False:
                 continue
             if len(word) > 3:
-                jieba.del_word(word)
+                jieba.del_word(word) # jieba.add_word(word,freq=0) 也行！
                 final_result.extend(jieba.lcut(word, HMM=discover_new_word))
             else:
                 final_result.append(word)
