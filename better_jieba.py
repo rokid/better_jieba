@@ -31,7 +31,7 @@ def fenci(one_string, discover_new_word=False):
                     or (len(word)>1 and (jieba.get_FREQ(word)==None or jieba.get_FREQ(word)==0)) \
                     or len(word)>3 \
                     or (len(word)==3 and jieba.get_FREQ(word)!=None and jieba.get_FREQ(word)<100):
-                jieba.del_word(word) # 强制
+                jieba.del_word(word) # 强制 # jieba.add_word(word,freq=0) 也行！
                 final_result.extend(jieba.lcut(word))
             else:
                 final_result.append(word)
