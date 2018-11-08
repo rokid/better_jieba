@@ -26,6 +26,13 @@ def isZH(char):
     return True
 
 
+def isDigit(x):
+    try:
+        x=int(x)
+        return isinstance(x,int)
+    except ValueError:
+        return False
+
 def get_subword_list(big_word):
     if not isZH(big_word[0]):
         return big_word
