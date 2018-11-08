@@ -20,7 +20,7 @@ $ git clone git@github.com:Rokid/better_jieba.git
 import jieba
 print(jieba.lcut('你手机号码是多少')) # ['你', '手机号码', '是', '多少']
 
-from better_jieba import better_cut
+from better_cut import *
 print(better_cut('你手机号码是多少'))  # ['你', '手机', '号码', '是', '多少']
 
 from recursive_cut import *
