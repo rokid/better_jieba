@@ -2,7 +2,7 @@
 #全部切成三字及以下
 import jieba
 
-def cut(line):
+def recursive_cut(line):
     result = []
     for big_word in jieba.lcut(line,HMM=False):
             subword_list = get_subword_list(big_word)
@@ -48,6 +48,6 @@ def go_subword_list(input_list,result):
         else:
             result.append(big_word)
 
-#print(cut("一二三四五六七八九十"))
-#print(cut("十九八七六五四三二一"))
+#print(recursive_cut("一二三四五六七八九十"))
+#print(recursive_cut("十九八七六五四三二一"))
 
