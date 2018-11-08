@@ -20,13 +20,13 @@ $ git clone git@github.com:Rokid/better_jieba.git
 import jieba
 print(jieba.lcut('你手机号码是多少')) # ['你', '手机号码', '是', '多少']
 
-from better_jieba import fenci
-print(fenci('你手机号码是多少'))  # ['你', '手机', '号码', '是', '多少']
+from better_jieba import better_cut
+print(better_cut('你手机号码是多少'))  # ['你', '手机', '号码', '是', '多少']
 
 from recursive_cut import *
 print(jieba.lcut("一二三四五六七八九十")) # ['一二三四五六七八九十']
-print(fenci("一二三四五六七八九十")) # ['一二三四五', '六七八九十']
-print(cut("一二三四五六七八九十")) # ['一二三', '四', '五', '六七', '八九十']
+print(better_cut("一二三四五六七八九十")) # ['一二三四五', '六七八九十']
+print(recursive_cut("一二三四五六七八九十")) # ['一二三', '四', '五', '六七', '八九十']
 
 ```
 
