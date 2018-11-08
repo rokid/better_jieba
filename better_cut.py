@@ -8,7 +8,7 @@ def isAllZh(s):# 判断是否全是中文
     return True
 
 
-def fenci(one_string, discover_new_word=False):
+def better_cut(one_string, discover_new_word=False):
     one_string = re.sub(r'\s+', '', one_string)# 去掉所有空格
     final_result = []
     temp_list = jieba.lcut(one_string, HMM=discover_new_word)
