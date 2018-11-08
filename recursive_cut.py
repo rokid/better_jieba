@@ -1,3 +1,5 @@
+# coding=UTF-8
+#全部切成三字及以下
 import jieba
 
 def cut(line):
