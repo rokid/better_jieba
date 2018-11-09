@@ -5,6 +5,8 @@ lines = f.readlines()
 word_set = set()
 for line in lines:
     for word in recursive_cut(line):
+        if word=="" or word==" ":
+            continue
         word_set.add(word.lower())
 
 print(len(word_set))
