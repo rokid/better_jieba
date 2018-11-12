@@ -3,13 +3,14 @@
 import jieba
 
 def clean_and_append(result_list,word):
-    word = word.replace("\n","")
+    # word = word.replace("\n","")
     if word == " " or word == "":
         return result_list
     result_list.append(word)
     return result_list
 
 def recursive_cut(line):
+    line = line.replace("\n", "")
     result = []
     for big_word in jieba.lcut(line,HMM=False):
             subword_list = get_subword_list(big_word)
