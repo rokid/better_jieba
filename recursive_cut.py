@@ -2,6 +2,13 @@
 #全部切成三字及以下
 import jieba
 
+def clean_and_append(result_list,word):
+    word = word.replace("\n","")
+    if word == " " or word == "":
+        return result_list
+    result_list.append(word)
+    return result_list
+
 def recursive_cut(line):
     result = []
     for big_word in jieba.lcut(line,HMM=False):
@@ -9,7 +16,7 @@ def recursive_cut(line):
             if isinstance(subword_list, list):
                 go_subword_list(subword_list,result)
             elif isinstance(subword_list, str):
-                result.append(subword_list)
+                clean_and_append(result,subword_list)
             else:
                 print("error")
     return result
@@ -25,13 +32,6 @@ def isZH(char):
         return False
     return True
 
-
-def isDigit(x):
-    try:
-        x=int(x)
-        return isinstance(x,int)
-    except ValueError:
-        return False
 
 def get_subword_list(big_word):
     if not isZH(big_word[0]):
@@ -49,12 +49,11 @@ def go_subword_list(input_list,result):
             if isinstance(subword_list,list):
                 go_subword_list(subword_list,result)
             elif isinstance(subword_list,str):
-                result.append(subword_list)
+                clean_and_append(result, subword_list)
             else:
                 print("error")
         else:
-            result.append(big_word)
+            clean_and_append(result, big_word)
 
 #print(recursive_cut("一二三四五六七八九十"))
 #print(recursive_cut("十九八七六五四三二一"))
-
