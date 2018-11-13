@@ -16,7 +16,7 @@ def better_cut(one_string, discover_new_word=False):
         for word in temp_list:
             if isAllZh(word) == False:
                 continue
-            if len(word) > 3:
+            if len(word) > 4:
                 jieba.del_word(word) # jieba.add_word(word,freq=0) 也行！
                 final_result.extend(jieba.lcut(word, HMM=discover_new_word))
             else:
@@ -25,12 +25,12 @@ def better_cut(one_string, discover_new_word=False):
         for word in temp_list:
             if isAllZh(word)==False:
                 continue
-            # if len(word)==3: # 根据词频设置阈值
+            # if len(word)==4: # 根据词频设置阈值
             #     print(word,jieba.get_FREQ(word))
             if jieba.get_FREQ(word)==None \
                     or (len(word)>1 and (jieba.get_FREQ(word)==None or jieba.get_FREQ(word)==0)) \
-                    or len(word)>3 \
-                    or (len(word)==3 and jieba.get_FREQ(word)!=None and jieba.get_FREQ(word)<100):
+                    or len(word)>4 \
+                    or (len(word)==4 and jieba.get_FREQ(word)!=None and jieba.get_FREQ(word)<100):
                 jieba.del_word(word) # 强制 # jieba.add_word(word,freq=0) 也行！
                 final_result.extend(jieba.lcut(word))
             else:
